@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+Author: Ronak Patel
+This file is a part of Ronak's Live Music Finder Project
+-->
+<html>
+    <head>
+        <title>Live Music Venue Finder</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AuhsAZgxKmNepopC4uelWWiPo0lAIYJbLTHwuBSTPuudCbzRMHcfUqGofhWBrlhw&callback=loadMapScenario' async defer></script>
+        <script src="script.js"></script>
+        <script src="location.js"></script>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
+       
+
+    </head>
+    <body>
+        <div style='background-color: #f7f7f7;'>
+            <div>
+                <nav class="navbar navbar-inverse" style="border-radius: 0!important;">
+                    <div>
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapseNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>                        
+                            </button>
+                            <a class="navbar-brand" href="#" id="identifyMobile">Ronak's LMV Finder</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="collapseNavbar">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="locate.html">Locate Live Music</a></li>
+                                <li><a href="json.html">JSON Data</a></li>
+                            </ul>   
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="row" id="mobileUpdate"> 
+                <div class="col-lg-7">
+                    <nav class="navbar navbar-default">
+                        <div>
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#searchNavbar">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>                        
+                                </button>
+                                <span class="navbar-brand">Sort By City</span>
+                            </div>
+                            <div class="collapse navbar-collapse" id="searchNavbar">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#" onclick="sortCity('All Cities');">All</a></li>
+                                    <li><a href="#" onclick="sortCity('Ancaster');">Ancaster</a></li>
+                                    <li><a href="#" onclick="sortCity('Dundas');">Dundas</a></li>
+                                    <li><a href="#" onclick="sortCity('Hamilton');">Hamilton</a></li> 
+                                    <li><a href="#" onclick="sortCity('Stoney Creek');">Stoney Creek</a></li>
+                                    <li><a href="#" onclick="sortCity('Waterdown');">Waterdown</a></li>
+                                </ul>   
+                            </div>
+                        </div>
+                    </nav>
+                    <div id='myMap' ></div>
+                </div>
+                <div id="searchBar" class="col-lg-5" >
+                    <div class="container-fluid">
+                        <div class="text-center" id="description"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="details" class="container-fluid">
+                <div class="form-group">
+                <input class="form-control" type="text" id="myInput" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" id="panelHeading">
+                        Live Music Venue - All Cities
+                        
+                    </div>
+                    <div class="panel-body">
+                    <ul id="list" >
+                    </ul>
+                    </div>
+                    <div class="panel-footer">Click on any one for just viewing a specific place</div>
+                </div>
+            </div>
+            <div id="modalArea">
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h3 class="modal-title">Can't Find Location</h3>
+                            </div>
+                            <div class="modal-body">
+                                <h4 id="msg">Some text in the modal.</h4>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="text-center">
+                <p>Data is only focused on Hamilton and its neighborhood.</p>
+            </footer>
+        </div>
+        
+        
+    </body>
+</html>

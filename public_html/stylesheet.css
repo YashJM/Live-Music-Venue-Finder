@@ -1,0 +1,53 @@
+/* 
+    Created on : 6-Nov-2018, 5:04:57 PM
+    Author     : Ronak Patel
+*/
+.gallery img {width: 100%; height: auto;}
+.buttonLg{background-color: rgb(0,0,0); background-color: rgba(0,0,0, 0.4); color: white; font-weight: bold; border: 3px solid #f1f1f1; border-radius: 5px; padding: 30px; font-size: 25px; text-align: center;}
+#buttons a:hover{text-decoration: none!important; color: lightgray;}
+.row{margin-left: 0px!important; margin-right: 0px !important;}
+#content{height: 100vh; margin-top: -20px; background-image: url("image/background1_edited.jpg");background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+#heading{ font-size: 5vw !important; color: #f7f7f7; padding: 30px;}
+#buttons{margin-top: 40vh;}
+#content2{margin-top: 40px; padding: 20px;  }
+p{font-size: 30px!important; color: #474747; font-family: roboto; font-weight: 300; letter-spacing: 1px;}
+#subHeading{font-size: 40px!important; color: #FE6663;}
+footer{clear: both; margin-top: 40px; padding: 20px 0px; background-color: #222222; }
+#locateNow{height: 30vh; background-image: url("image/map_edited.jpg");background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;}
+#locateNow, #rawData{padding: 30px 0px; }
+#rawData p{font-size: 20px !important;}
+footer p{font-size: 20px!important; color: #f9f9f9;}
+#myMap{height: 50vh;}
+#list{ height: 46vh; overflow: auto; list-style-type: none;}
+#list li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+#locateNow a:hover{text-decoration: none; color: lightgrey;}
+#description{margin: 60px 0 0 0 !important;  padding: 10px !important;}
+#description p{font-size: 20px !important; }
+#description h3{color: #FE6663}
+#details{margin: 20px 0 0 0!important; padding: 20px!important;}
+
+
+
+@media screen and (max-width: 800px){
+    #mobileUpdate{margin: 0!important; padding: 0!important;}
+    #heading{font-size:40px!important;}
+    p{font-size: 20px!important;}
+    #subHeading{font-size: 30px!important;}
+    #rawData p{font-size: 18px !important;}
+    footer{font-size: 17px !important;}
+
+}
+
+
+
+
